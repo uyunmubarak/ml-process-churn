@@ -38,7 +38,6 @@ def main():
 
     pickle_dump(df, config["raw_df_path"])
 
-
     x_train, x_valid, x_test, y_train, y_valid, y_test = split_data(df)
 
     # reset index
