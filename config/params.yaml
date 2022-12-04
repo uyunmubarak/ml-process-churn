@@ -1,0 +1,120 @@
+dataset_dir : ../data/raw/
+
+object_columns :
+- gender
+- security_no
+- region_category
+- membership_category
+- joining_date
+- joined_through_referral
+- referral_id
+- preferred_offer_types
+- medium_of_operation
+- internet_option
+- last_visit_time
+- avg_frequency_login_days
+- used_special_discount
+- offer_application_preference
+- past_complaint
+- complaint_status
+- feedback
+int_columns :
+- age
+- days_since_last_login
+- churn_risk_score
+float_columns :
+- avg_time_spent
+- avg_transaction_value
+- points_in_wallet
+
+label:
+- churn_risk_score
+predictors :
+- age
+- days_since_last_login
+- points_in_wallet
+- gender
+- region_category
+- membership_category
+- joined_through_referral
+- preferred_offer_types
+- medium_of_operation
+- internet_option    
+- used_special_discount
+- offer_application_preference
+- past_complaint     
+- complaint_status   
+- feedback          
+
+range_gender :
+- F
+- M
+- Unknown
+range_region_category :
+- City
+- Town
+- Village
+- 
+range_membership_category :
+- Basic Membership
+- Silver Membership
+- Platinum Membership
+- Gold Membership
+- No Membership
+- Premium Membership
+range_joined_through_referral :
+- "?"
+- "No"
+- "Yes"
+range_preferred_offer_types :
+- Gift Vouchers/Coupons
+- Credit/Debit Card Offers
+- Without Offers
+- 
+range_medium_of_operation :
+- "?"
+- Desktop
+- Smartphone
+- Both
+range_internet_option :
+- Wi-Fi
+- Mobile_Data
+- Fiber_Optic
+range_used_special_discount :
+- "Yes"
+- "No"
+range_offer_application_preference :
+- "Yes"
+- "No"
+range_past_complaint :
+- "Yes"
+- "No"
+range_complaint_status :
+- Not Applicable
+- Unsolved
+- Solved
+- Solved in Follow-up
+- No Information Available
+range_feedback :
+- Poor Product Quality
+- No reason specified
+- Too many ads
+- Poor Website
+- Poor Customer Service
+- Reasonable Price
+- User Friendly Website
+- Products always in Stock
+- Quality Customer Care
+range_age :
+- 10
+- 64
+range_days_since_last_login :
+- -999
+- 26
+range_churn_risk_score :
+- 0
+- 1
+range_points_in_wallet :
+- -760.661236
+- 2069.069761
+- 

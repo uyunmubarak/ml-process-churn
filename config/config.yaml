@@ -1,0 +1,225 @@
+raw_dataset_path: ../data/raw/churn.csv
+raw_df_path: ../data/processed/raw_df.pkl
+train_set_path:
+- ../data/processed/x_train.pkl
+- ../data/processed/y_train.pkl
+valid_set_path:
+- ../data/processed/x_valid.pkl
+- ../data/processed/y_valid.pkl
+test_set_path:
+- ../data/processed/x_test.pkl
+- ../data/processed/y_test.pkl
+cleaned_raw_path: ../data/processed/df_raw.pkl
+train_clean_set_path:
+- ../data/processed/x_clean_train.pkl
+- ../data/processed/y_clean_train.pkl
+valid_clean_set_path:
+- ../data/processed/x_clean_valid.pkl
+- ../data/processed/y_clean_valid.pkl
+test_clean_set_path:
+- ../data/processed/x_clean_test.pkl
+- ../data/processed/y_clean_test.pkl
+production_model_path: ../models/production_model.pkl
+ohe_categorical_path: ../models/ohe_categorical.pkl
+scaler_path: ../models/std_scaler.pkl
+training_log_path: ../log/training_log.json
+
+# Drop Column
+drop_columns :
+- security_no
+- joining_date
+- referral_id
+- last_visit_time
+- avg_time_spent
+- avg_transaction_value
+- avg_frequency_login_days
+
+# Columns by data type related
+object_columns :
+- gender
+- security_no
+- region_category
+- membership_category
+- joining_date
+- joined_through_referral
+- referral_id
+- preferred_offer_types
+- medium_of_operation
+- internet_option
+- last_visit_time
+- avg_frequency_login_days
+- used_special_discount
+- offer_application_preference
+- past_complaint
+- complaint_status
+- feedback
+int_columns :
+- age
+- days_since_last_login
+- churn_risk_score
+float_columns :
+- avg_time_spent
+- avg_transaction_value
+- points_in_wallet
+
+label:
+- churn_risk_score
+predictors :
+- age
+- days_since_last_login
+- points_in_wallet
+- gender
+- region_category
+- membership_category
+- joined_through_referral
+- preferred_offer_types
+- medium_of_operation
+- internet_option    
+- used_special_discount
+- offer_application_preference
+- past_complaint     
+- complaint_status   
+- feedback          
+
+categorical_column :
+- gender
+- region_category
+- membership_category
+- joined_through_referral
+- preferred_offer_types
+- medium_of_operation
+- internet_option    
+- used_special_discount
+- offer_application_preference
+- past_complaint     
+- complaint_status   
+- feedback       
+numerical_column :
+- age
+- days_since_last_login
+- points_in_wallet
+
+range_gender :
+- F
+- M
+- Unknown
+range_region_category :
+- City
+- Town
+- Village
+- 
+range_membership_category :
+- Basic Membership
+- Silver Membership
+- Platinum Membership
+- Gold Membership
+- No Membership
+- Premium Membership
+range_joined_through_referral :
+- "?"
+- "No"
+- "Yes"
+range_preferred_offer_types :
+- Gift Vouchers/Coupons
+- Credit/Debit Card Offers
+- Without Offers
+- 
+range_medium_of_operation :
+- "?"
+- Desktop
+- Smartphone
+- Both
+range_internet_option :
+- Wi-Fi
+- Mobile_Data
+- Fiber_Optic
+range_used_special_discount :
+- "Yes"
+- "No"
+range_offer_application_preference :
+- "Yes"
+- "No"
+range_past_complaint :
+- "Yes"
+- "No"
+range_complaint_status :
+- Not Applicable
+- Unsolved
+- Solved
+- Solved in Follow-up
+- No Information Available
+range_feedback :
+- Poor Product Quality
+- No reason specified
+- Too many ads
+- Poor Website
+- Poor Customer Service
+- Reasonable Price
+- User Friendly Website
+- Products always in Stock
+- Quality Customer Care
+range_age :
+- 10
+- 64
+range_days_since_last_login :
+- -999
+- 26
+range_churn_risk_score :
+- 0
+- 1
+range_points_in_wallet :
+- -760.661236
+- 2069.069761
+
+#categorical ohe
+range_categorical_ohe :
+- gender_F
+- gender_M
+- region_category_City
+- region_category_KOSONG
+- region_category_Town
+- region_category_Village
+- membership_category_Basic Membership
+- membership_category_Gold Membership
+- membership_category_No Membership
+- membership_category_Platinum Membership
+- membership_category_Premium Membership
+- membership_category_Silver Membership
+- joined_through_referral_KOSONG
+- joined_through_referral_No
+- joined_through_referral_Yes
+- preferred_offer_types_Credit/Debit Card Offers
+- preferred_offer_types_Gift Vouchers/Coupons
+- preferred_offer_types_KOSONG
+- preferred_offer_types_Without Offers
+- medium_of_operation_Both
+- medium_of_operation_Desktop
+- medium_of_operation_KOSONG
+- medium_of_operation_Smartphone
+- internet_option_Fiber_Optic
+- internet_option_Mobile_Data
+- internet_option_Wi-Fi
+- used_special_discount_No
+- used_special_discount_Yes
+- offer_application_preference_No
+- offer_application_preference_Yes
+- past_complaint_No
+- past_complaint_Yes
+- complaint_status_No Information Available
+- complaint_status_Not Applicable
+- complaint_status_Solved
+- complaint_status_Solved in Follow-up
+- complaint_status_Unsolved
+- feedback_No reason specified
+- feedback_Poor Customer Service
+- feedback_Poor Product Quality
+- feedback_Poor Website
+- feedback_Products always in Stock
+- feedback_Quality Customer Care
+- feedback_Reasonable Price
+- feedback_Too many ads
+- feedback_User Friendly Website
+
+# Splitting related
+test_size: 0.3
+valid_size: 0.5
